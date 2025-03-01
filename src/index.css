@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;700&display=swap");
+
+@import "tailwindcss";
+
+@keyframes typing {
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-typing {
+  animation: typing 1.5s steps(40, end) forwards;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@theme {
+  --font-raleway: "Raleway", "sans-serif";
+  --font-open-sans: "Open Sans", "sans-serif";
+
+  --animate-wave: wave 2s infinite;
+
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(20deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+}
