@@ -1,8 +1,8 @@
-import { FaGithub, FaYoutube } from "react-icons/fa6";
 import NavLink from "../common/NavLink";
 import { useState } from "react";
 
 import { GiHamburgerMenu } from "react-icons/gi";
+import { SOCIAL_LINKS } from "../common/SocialLinks";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,29 +13,16 @@ export default function Header() {
       title: "Home",
     },
     {
-      link: "#work",
-      title: "Work",
-    },
-    {
       link: "#about",
       title: "About",
     },
     {
+      link: "#work",
+      title: "Work",
+    },
+    {
       link: "#contact",
       title: "Contact",
-    },
-  ];
-
-  const SOCIAL_LINKS = [
-    {
-      link: "https://github.com/PashaGames",
-      title: "Github",
-      icon: FaGithub,
-    },
-    {
-      link: "https://www.youtube.com/@pashagamesdev",
-      title: "YouTube",
-      icon: FaYoutube,
     },
   ];
 

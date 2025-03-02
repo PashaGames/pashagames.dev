@@ -44,7 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <h3 className="text-4xl font-semibold font-raleway break-words">
               {title}
             </h3>
-            <p className="text-violet-300/80 text-sm font-raleway font-bold">
+            <p className="text-violet-300/80 text-sm mb-2 font-raleway font-bold">
               {position}
             </p>
           </div>
