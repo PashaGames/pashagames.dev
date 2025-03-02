@@ -10,7 +10,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-gray-800 text-gray-100 flex justify-center">
       <div className="max-w-[90%] xl:max-w-[1223px]">
         <Header />
-        <main className="container mx-2 mt-10 md:mt-0 px-4">
+        <main className="container mx-2 mt-20 md:mt-0 px-4">
           <HeroSection />
           <AboutSection />
           <WorkSection />

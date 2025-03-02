@@ -28,7 +28,7 @@ const ContactSection = () => {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-4xl font-raleway uppercase font-bold mb-12"
+          className="text-4xl font-raleway uppercase font-bold mb-12 text-center md:text-left"
         >
           <span className="bg-gradient-to-r from-blue-400 to-violet-700 bg-clip-text text-transparent">
             Get in Touch
