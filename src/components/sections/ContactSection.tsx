@@ -24,11 +24,11 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-20 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl flex flex-col justify-center items-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-4xl font-raleway uppercase font-bold mb-12 text-center md:text-left"
+          className="text-4xl font-raleway uppercase font-bold mb-12 text-center"
         >
           <span className="bg-gradient-to-r from-blue-400 to-violet-700 bg-clip-text text-transparent">
             Get in Touch
@@ -57,7 +57,7 @@ const ContactSection = () => {
                   <h3 className="text-xl font-semibold mb-1">
                     {contact.title}
                   </h3>
-                  <p className="text-white/70">{contact.value}</p>
+                  <p className="text-white/70 break-all">{contact.value}</p>
                 </div>
               </a>
             </motion.div>
