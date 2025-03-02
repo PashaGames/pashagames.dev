@@ -1,5 +1,6 @@
 import Header from "./components/layout/Header";
 import HeroSection from "./components/sections/HeroSection";
+import WorkSection from "./components/sections/WorkSection";
 
 export default function HomePage() {
   return (
@@ -8,6 +9,7 @@ export default function HomePage() {
         <Header />
         <main className="container mx-2 px-4">
           <HeroSection />
+          <WorkSection />
         </main>
       </div>
     </div>

@@ -1,17 +1,21 @@
 interface NavLinkProps {
   href: string;
+  onClick?: () => void;
+  className?: string;
   title: string;
 }
 
 export default function NavLink({
   href,
-
+  onClick,
   title,
+  className,
 }: NavLinkProps) {
   return (
     <a
       href={href}
-      className="font-raleway  p-2 rounded-full transition-colors relative group flex items-center"
+      onClick={onClick}
+      className={`font-raleway  p-2 rounded-full transition-colors relative group flex items-center ${className ? className : ""}`}
       aria-label={title}
     >
       <div className="ml-2 w-24 text-center">

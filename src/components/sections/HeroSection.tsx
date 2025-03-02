@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Wave from "../../assets/wave.svg?react";
 
 const TerminalText: React.FC<{
@@ -20,12 +20,21 @@ const TerminalContent = () => {
   const [activeLine, setActiveLine] = useState(0);
   const lines = [
     <>
-      <TerminalText type="command">git</TerminalText> add
+      <TerminalText type="command">git</TerminalText> add .
     </>,
     <>
-      <TerminalText type="directory">A</TerminalText>{" "}
-      src/components/HeroSection.tsx
+      <TerminalText type="command">git</TerminalText> commit -m{" "}
+      <TerminalText type="string">"feat: initial commit"</TerminalText>
     </>,
+    <>[main (root-commit) fc95d4a] feat: initial commit</>,
+    <>2 files changed, 23 insertions(+)</>,
+    <>create mode 100644 .gitignore</>,
+    <>create mode 100644 hello.txt</>,
+    <></>,
+    <>
+      <TerminalText type="command">cat</TerminalText> hello.txt
+    </>,
+    <>hello world</>,
   ];
 
   useEffect(() => {
@@ -33,7 +42,7 @@ const TerminalContent = () => {
       setActiveLine((prev) => (prev < lines.length - 1 ? prev + 1 : prev));
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+  });
 
   return (
     <div className="relative">
@@ -59,36 +68,36 @@ const TerminalContent = () => {
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="flex items-center justify-center min-h-[70vh] px-4">
-      <div className="flex flex-col md:flex-row items-center w-full max-w-6xl">
-        {/* Text Content */}
-        <div className="md:w-1/2 md:mr-8 mb-8 md:mb-0 text-center md:text-left">
-          <h1 className="text-6xl font-open-sans font-bold flex items-center mb-2">
+    <section
+      className="flex items-center justify-center min-h-screen mt-5 px-4"
+      id="home"
+    >
+      <div className="flex flex-col md:flex-row items-center w-full">
+        <div className="w-full lg:w-1/2 md:mr-8 mb-8 md:mb-0 text-center md:text-left">
+          <h1 className="text-5xl lg:text-6xl font-open-sans font-bold flex items-center justify-center md:justify-normal mb-2">
             <span className="bg-gradient-to-r from-blue-400 to-violet-700 bg-clip-text text-transparent">
               Hey, there
             </span>
-            <Wave className="inline-block w-12 h-12 ml-2 animate-wave" />
+            <Wave className="w-12 h-12 ml-2 animate-wave hidden lg:inline-block" />
           </h1>
-          <h2 className="text-6xl font-open-sans mb-2">
+          <h2 className="text-5xl lg:text-6xl font-open-sans mb-2">
             <span className="font-bold bg-gradient-to-r from-zinc-400 to-zinc-200 bg-clip-text text-transparent">
               I'm{" "}
             </span>
             <span className="font-bold bg-gradient-to-r from-blue-400 to-violet-700 bg-clip-text text-transparent">
-              Pavel Sahapov.
+              Pavel Sahapov
             </span>
           </h2>
-          <p className="text-5xl font-bold font-open-sans bg-gradient-to-r from-zinc-400 to-zinc-200 bg-clip-text text-transparent pb-2">
+          <p className="text-4xl lg:text-5xl font-bold font-open-sans bg-gradient-to-r from-zinc-400 to-zinc-200 bg-clip-text text-transparent pb-2">
             a Software Engineer
           </p>
-          <p className="text-3xl font-open-sans bg-gradient-to-r from-zinc-600 to-zinc-400 bg-clip-text text-transparent">
+          <p className="text-3xl lg:text-4xl  font-open-sans bg-gradient-to-r from-zinc-600 to-zinc-400 bg-clip-text text-transparent">
             focused on providing an enjoyable web experience.
           </p>
         </div>
 
-        {/* Terminal */}
         <div className="md:w-1/2 w-full max-w-2xl md:ml-8">
           <div className="bg-zinc-900 rounded-lg shadow-xl overflow-hidden h-80">
-            {/* Terminal Header */}
             <div className="flex items-center px-4 py-2 bg-zinc-800">
               <div className="flex space-x-2">
                 <div className="h-3 w-3 rounded-full bg-red-500" />
@@ -98,7 +107,6 @@ const HeroSection: React.FC = () => {
               <span className="text-zinc-300 text-sm ml-4">pashagames@dev</span>
             </div>
 
-            {/* Terminal Content */}
             <div className="p-4 text-sm font-mono">
               <TerminalContent />
             </div>

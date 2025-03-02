@@ -2,6 +2,9 @@
 
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
 @keyframes typing {
   from {
     max-width: 0;
